@@ -13,7 +13,16 @@ pipeline {
                 sleep(3)
                   }
            }
-      
+        
+        stage('Build JUnit') {
+            steps {
+                sh 'cd spring-petclinic-rest && mvn compile &'
+
+            }
+        }
+        
+       
+
          stage('Postman testing') {
             steps { 
                 script {
